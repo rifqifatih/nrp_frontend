@@ -5,6 +5,7 @@ RUN /bin/bash -c "/bin/sed -e \"s=localhost="$external_nrp_ip"=\" -i /home/bbpnr
 RUN /bin/bash -c "source /home/bbpnrsoa/nrp/src/user-scripts/nrp_variables"
 
 USER root
+
 CMD ["/usr/bin/supervisord", "-n"]
 
 EXPOSE 9000
