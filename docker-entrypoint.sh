@@ -8,4 +8,4 @@ source /home/bbpnrsoa/nrp/src/user-scripts/nrp_variables
 /bin/sed -e 's/localhost/'"$NODE_IP"'/' -i /home/bbpnrsoa/nrp/src/nrpBackendProxy/config.json
 /bin/sed -e 's/8080/30001/' -i /home/bbpnrsoa/nrp/src/nrpBackendProxy/config.json
 
-sudo /usr/bin/supervisord -n
+sudo ROS_IP=$(hostname -I | cut -d " " -f 1) HBP=/home/bbpnrsoa/nrp/src /usr/bin/supervisord -n
