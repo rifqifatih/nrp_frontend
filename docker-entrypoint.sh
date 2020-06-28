@@ -14,4 +14,7 @@ sudo chown -R bbpnrsoa:bbp-ext /home/bbpnrsoa/nrp/src/Experiments && sudo chown 
 # /bin/sed -e 's/localhost/host.docker.internal/' -i /home/bbpnrsoa/nrp/src/ExDFrontend/dist/config.json
 # /bin/sed -e 's/localhost/host.docker.internal/' -i /home/bbpnrsoa/nrp/src/nrpBackendProxy/config.json
 
-sudo ROS_IP=$(hostname -I | cut -d " " -f 1) HBP=/home/bbpnrsoa/nrp/src /usr/bin/supervisord -n
+# Update environment variable for proxy supervisord config
+sudo sed -i '/environment/c\environment=HBP=$(ENV_HBP)s,NODE_IP=$(ENV_NODE_IP)s' /etc/supervisord.d/proxy.ini
+
+sudo ROS_IP=$(hostname -I | cut -d " " -f 1) HBP=/home/bbpnrsoa/nrp/src NODE_IP=$NODE_IP /usr/bin/supervisord -n
