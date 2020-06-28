@@ -111,7 +111,7 @@ function updateExperimentList() {
     .getToken()
     .then(serversProxy.setToken)
     .then(() => KubernetesDiscoveryService.query(configuration))
-    .then((configuration) => serversProxy.getExperimentsAndSimulations(configuration))
+    .then((new_configuration) => serversProxy.getExperimentsAndSimulations(new_configuration))
     .then(
       ([
         joinableServers,
