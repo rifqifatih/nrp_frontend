@@ -4,7 +4,7 @@ This repository consist of 2 main parts (file):
 
 The `Dockerfile` defines the modification applied to the base image of NRP backend from `hbpneurorobotics/nrp_frontend:dev` tuned for deployment on Kubernetes cluster inside Google Cloud Platform environment.
 
-Any commit to the `master` branch will automatically trigger a build to the respected [Docker Hub](https://hub.docker.com/repository/docker/rifqifatih/nrp_frontend) repository.
+Any commit to the `master` branch will automatically trigger a build to the respective [Docker Hub](https://hub.docker.com/repository/docker/rifqifatih/nrp_frontend) repository.
 
 Pull the image from repository:
 ```
